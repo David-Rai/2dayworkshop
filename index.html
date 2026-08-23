@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Days Web Development Workshop</title>
+    <meta name="description" content="Learn web development in 2 days. HTML, CSS, JavaScript, GitHub, and deploy your personal portfolio.">
+    
+    <!-- Fonts: Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#0a0a0a',
+                            surface: '#111111',
+                            card: '#161616',
+                            border: '#2a2a2a',
+                            text: '#f3f4f6',
+                            textmuted: '#9ca3af',
+                            accent: '#3b82f6', // used extremely sparsely if at all
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(255, 255, 255, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-white selection:text-black">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-brand-bg/80 backdrop-blur-md border-b border-brand-border z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-sm tracking-widest uppercase">2 Days WDW</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-textmuted">
+                <a href="#overview" class="hover:text-white transition-colors">Overview</a>
+                <a href="#timeline" class="hover:text-white transition-colors">Timeline</a>
+                <a href="#syllabus" class="hover:text-white transition-colors">Syllabus</a>
+                <a href="#resources" class="hover:text-white transition-colors">Resources</a>
+                <a href="#project" class="hover:text-white transition-colors">Final Project</a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col space-y-1.5 p-2 bg-transparent text-white" aria-label="Menu">
+                <span class="w-6 h-0.5 bg-white rounded transition-transform duration-300"></span>
+                <span class="w-6 h-0.5 bg-white rounded transition-opacity duration-300"></span>
+                <span class="w-6 h-0.5 bg-white rounded transition-transform duration-300"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-b border-brand-border p-6 flex flex-col gap-6 text-sm">
+            <a href="#overview" class="mobile-link text-brand-textmuted hover:text-white">Overview</a>
+            <a href="#timeline" class="mobile-link text-brand-textmuted hover:text-white">Timeline</a>
+            <a href="#syllabus" class="mobile-link text-brand-textmuted hover:text-white">Syllabus</a>
+            <a href="#resources" class="mobile-link text-brand-textmuted hover:text-white">Resources</a>
+            <a href="#project" class="mobile-link text-brand-textmuted hover:text-white">Final Project</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 px-6 max-w-6xl mx-auto">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 md:py-32 flex flex-col items-center text-center animate-fade-in-up">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-textmuted mb-8">
+                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                2 Days Workshop
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
+                WEB DEVELOPMENT<br>
+                <span class="text-brand-textmuted">WORKSHOP</span>
+            </h1>
+            <p class="max-w-2xl text-base md:text-lg text-brand-textmuted mb-8 leading-relaxed">
+                Learn how websites work, build your first webpage, style it with CSS, add basic JavaScript interactions, and publish your project online.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-10 text-xs font-mono font-medium">
+                <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">HTML</span>
+                <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">CSS</span>
+                <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">JavaScript</span>
+                <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">GitHub</span>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#syllabus" class="px-8 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors">
+                    Explore Syllabus
+                </a>
+                <a href="#project" class="px-8 py-3 bg-transparent border border-brand-border rounded hover:bg-brand-surface transition-colors">
+                    View Final Project
+                </a>
+            </div>
+        </section>
+
+        <!-- Workshop Overview (Learning Journey) -->
+        <section id="overview" class="py-20 border-t border-brand-border">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-semibold mb-4">The Learning Journey</h2>
+                <p class="text-sm text-brand-textmuted">A step-by-step path from zero to a deployed website.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-stretch justify-center gap-4 relative overflow-x-auto pb-4 hide-scrollbar">
+                <!-- Journey Item -->
+                <div class="flex-none w-full md:w-40 group">
+                    <div class="h-full bg-brand-surface border border-brand-border rounded-lg p-5 group-hover:border-white/30 transition-colors flex md:flex-col items-center gap-4 md:text-center text-left">
+                        <div class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-mono text-xs font-semibold mb-1">Browser</h3>
+                            <p class="text-xs text-brand-textmuted">How web works</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arrow -->
+                <div class="hidden md:flex items-center justify-center text-brand-border"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg></div>
+                <!-- Journey Item -->
+                <div class="flex-none w-full md:w-40 group">
+                    <div class="h-full bg-brand-surface border border-brand-border rounded-lg p-5 group-hover:border-white/30 transition-colors flex md:flex-col items-center gap-4 md:text-center text-left">
+                        <div class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-mono text-xs font-semibold mb-1">HTML</h3>
+                            <p class="text-xs text-brand-textmuted">Structure</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arrow -->
+                <div class="hidden md:flex items-center justify-center text-brand-border"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg></div>
+                <!-- Journey Item -->
+                <div class="flex-none w-full md:w-40 group">
+                    <div class="h-full bg-brand-surface border border-brand-border rounded-lg p-5 group-hover:border-white/30 transition-colors flex md:flex-col items-center gap-4 md:text-center text-left">
+                        <div class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-mono text-xs font-semibold mb-1">CSS</h3>
+                            <p class="text-xs text-brand-textmuted">Styling</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arrow -->
+                <div class="hidden md:flex items-center justify-center text-brand-border"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg></div>
+                <!-- Journey Item -->
+                <div class="flex-none w-full md:w-40 group">
+                    <div class="h-full bg-brand-surface border border-brand-border rounded-lg p-5 group-hover:border-white/30 transition-colors flex md:flex-col items-center gap-4 md:text-center text-left">
+                        <div class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-mono text-xs font-semibold mb-1">JavaScript</h3>
+                            <p class="text-xs text-brand-textmuted">Interactions</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arrow -->
+                <div class="hidden md:flex items-center justify-center text-brand-border"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg></div>
+                <!-- Journey Item -->
+                <div class="flex-none w-full md:w-40 group">
+                    <div class="h-full bg-brand-surface border border-brand-border rounded-lg p-5 group-hover:border-white/30 transition-colors flex md:flex-col items-center gap-4 md:text-center text-left">
+                        <div class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-mono text-xs font-semibold mb-1">GitHub</h3>
+                            <p class="text-xs text-brand-textmuted">Deployment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 mb-6 border border-brand-border rounded-lg p-6 bg-brand-surface hover:border-white/30 transition-colors shadow-glow flex flex-col items-center sm:flex-row gap-6 max-w-3xl mx-auto">
+                <div class="w-16 h-16 rounded-full bg-brand-card border border-brand-border flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h3 class="text-lg font-semibold mb-2">Final Goal</h3>
+                    <p class="text-sm text-brand-textmuted max-w-md">Your very own portfolio website hosted live on the internet, which you can show directly to your friends, family and employers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshop Timeline -->
+        <section id="timeline" class="py-20 border-t border-brand-border">
+            <h2 class="text-3xl font-semibold mb-12">Workshop Timeline</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Day 1 -->
+                <div class="bg-brand-surface border border-brand-border rounded-xl p-8 hover:border-white/20 transition-all">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono bg-white text-black rounded font-bold">DAY 1</span>
+                        <h3 class="text-xl font-medium">Understand & Build</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-brand-textmuted">
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 mt-0.5 text-white/40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span>Introduction to Web Development</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 mt-0.5 text-white/40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span>Browser</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 mt-0.5 text-white/40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span>Website & Web Development</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 mt-0.5 text-white/40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-white">HTML</span></li>
+                        <li class="flex items-start gap-3 pl-7"><span>HTML Structure</span></li>
+                        <li class="flex items-start gap-3 pl-7"><span>Basic HTML elements</span></li>
+                        <li class="flex items-start gap-3 pl-7"><span>Forms</span></li>
+                        <li class="flex items-start gap-3 pl-7"><span>Semantic HTML</span></li>
+                        <li class="flex items-start gap-3 mt-4 pt-4 border-t border-brand-border"><svg class="w-4 h-4 mt-0.5 text-white shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><strong class="text-white font-medium">Build a basic webpage</strong></li>
+                    </ul>
+                </div>
+                
+                <!-- Day 2 -->
+                <div class="bg-brand-surface border border-brand-border rounded-xl p-8 hover:border-white/20 transition-all">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono bg-white text-black rounded font-bold">DAY 2</span>
+                        <h3 class="text-xl font-medium">Style, Interact & Deploy</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-brand-textmuted">
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 mt-0.5 text-white/40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-white">CSS</span></li>
+                        <li class="flex items-start gap-3 pl-7"><span>Selectors & Box Model</span></li>
+                        <li class="flex items-start gap-3 pl-7"><span>Flexbox & Responsive Design</span></li>
+                        <li class="flex items-start gap-3 mt-4"><svg class="w-4 h-4 mt-0.5 text-white/40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-white">JavaScript</span></li>
+                        <li class="flex items-start gap-3 mt-4"><svg class="w-4 h-4 mt-0.5 text-white/40 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-white">GitHub</span></li>
+                        <li class="flex items-start gap-3 mt-4 pt-4 border-t border-brand-border"><svg class="w-4 h-4 mt-0.5 text-white shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><strong class="text-white font-medium">Portfolio Project & Deployment</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complete Syllabus -->
+        <section id="syllabus" class="py-20 border-t border-brand-border">
+            <h2 class="text-3xl font-semibold mb-4">Complete Syllabus</h2>
+            <p class="text-brand-textmuted mb-12">Detailed breakdown of everything you will learn during the workshop.</p>
+            
+            <div class="flex flex-col gap-4">
+                
+                <!-- Group 1 -->
+                <details class="group bg-brand-surface border border-brand-border rounded-lg overflow-hidden" open>
+                    <summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+                        <h3 class="text-lg font-medium group-open:text-white text-brand-textmuted transition-colors">Introduction to Web Development</h3>
+                        <div class="w-6 h-6 bg-brand-card border border-brand-border rounded flex items-center justify-center group-open:rotate-180 transition-transform">
+                            <svg class="w-4 h-4 text-brand-textmuted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 border-t border-brand-border mt-2">
+                        <ul class="pt-4 space-y-3 text-sm text-brand-textmuted">
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Intro to our workshop syllabus timeline</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Intro to browser</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Intro to website and web development</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Overview of HTML, CSS, JS and Code Editor</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Group 2 -->
+                <details class="group bg-brand-surface border border-brand-border rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+                        <h3 class="text-lg font-medium group-open:text-white text-brand-textmuted transition-colors">HTML</h3>
+                        <div class="w-6 h-6 bg-brand-card border border-brand-border rounded flex items-center justify-center group-open:rotate-180 transition-transform">
+                            <svg class="w-4 h-4 text-brand-textmuted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 border-t border-brand-border mt-2">
+                        <ul class="pt-4 space-y-3 text-sm text-brand-textmuted">
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> What is HTML?</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Basic HTML structure</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Headings & paragraphs</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Links & images</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Lists</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Buttons</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Division tag</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Group 3 -->
+                <details class="group bg-brand-surface border border-brand-border rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+                        <h3 class="text-lg font-medium group-open:text-white text-brand-textmuted transition-colors">HTML Complete</h3>
+                        <div class="w-6 h-6 bg-brand-card border border-brand-border rounded flex items-center justify-center group-open:rotate-180 transition-transform">
+                            <svg class="w-4 h-4 text-brand-textmuted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 border-t border-brand-border mt-2">
+                        <ul class="pt-4 space-y-3 text-sm text-brand-textmuted">
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Forms & inputs</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Semantic elements</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Icons and fonts</li>
+                            <li class="flex items-start gap-3 font-medium text-white"><span class="w-4 h-4 rounded-sm border-2 border-white mt-0.5 flex-shrink-0 flex items-center justify-center"><svg class="w-3 h-3 text-white hidden checked-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Build a basic webpage</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Group 4 -->
+                <details class="group bg-brand-surface border border-brand-border rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+                        <h3 class="text-lg font-medium group-open:text-white text-brand-textmuted transition-colors">CSS</h3>
+                        <div class="w-6 h-6 bg-brand-card border border-brand-border rounded flex items-center justify-center group-open:rotate-180 transition-transform">
+                            <svg class="w-4 h-4 text-brand-textmuted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 border-t border-brand-border mt-2">
+                        <ul class="pt-4 space-y-3 text-sm text-brand-textmuted">
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> What is CSS?</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Types of CSS</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Selectors & classes</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Colors & fonts</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Icons</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Margin & padding</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Box model</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Flexbox</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Basic responsive design</li>
+                            <li class="flex items-start gap-3 font-medium text-white"><span class="w-4 h-4 rounded-sm border-2 border-white mt-0.5 flex-shrink-0"></span> Style the webpage</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Group 5 -->
+                <details class="group bg-brand-surface border border-brand-border rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+                        <h3 class="text-lg font-medium group-open:text-white text-brand-textmuted transition-colors">JavaScript</h3>
+                        <div class="w-6 h-6 bg-brand-card border border-brand-border rounded flex items-center justify-center group-open:rotate-180 transition-transform">
+                            <svg class="w-4 h-4 text-brand-textmuted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 border-t border-brand-border mt-2">
+                        <ul class="pt-4 space-y-3 text-sm text-brand-textmuted">
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> What is JavaScript?</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Connecting JS into Website</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Basic Alert button</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Group 6 -->
+                <details class="group bg-brand-surface border border-brand-border rounded-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+                        <h3 class="text-lg font-medium group-open:text-white text-brand-textmuted transition-colors">GitHub</h3>
+                        <div class="w-6 h-6 bg-brand-card border border-brand-border rounded flex items-center justify-center group-open:rotate-180 transition-transform">
+                            <svg class="w-4 h-4 text-brand-textmuted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 border-t border-brand-border mt-2">
+                        <ul class="pt-4 space-y-3 text-sm text-brand-textmuted">
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> What is GitHub?</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Create a repository</li>
+                            <li class="flex items-start gap-3"><span class="w-4 h-4 rounded-sm border border-brand-border mt-0.5 flex-shrink-0"></span> Push project to GitHub</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Examples & Resources -->
+        <section id="resources" class="py-20 border-t border-brand-border w-full">
+            <h2 class="text-3xl font-semibold mb-4">Examples & Inspiration</h2>
+            <p class="text-brand-textmuted mb-12">Websites deployed by previous students to serve as references.</p>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-brand-surface border border-brand-border rounded-lg p-6 group hover:border-white/30 transition-colors flex flex-col justify-between items-start min-h-[160px]">
+                    <div>
+                        <h3 class="font-mono text-sm font-semibold mb-1 text-white truncate w-full">tailwind-demo1</h3>
+                        <p class="text-xs text-brand-textmuted line-clamp-2">Example project / reference</p>
+                    </div>
+                    <a href="https://tailwind-demo1.netlify.app/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border border-brand-border rounded bg-brand-bg text-xs group-hover:bg-white group-hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                        Visit Website
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-surface border border-brand-border rounded-lg p-6 group hover:border-white/30 transition-colors flex flex-col justify-between items-start min-h-[160px]">
+                    <div>
+                        <h3 class="font-mono text-sm font-semibold mb-1 text-white truncate w-full">davidrai.pages.dev</h3>
+                        <p class="text-xs text-brand-textmuted line-clamp-2">Example project / reference</p>
+                    </div>
+                    <a href="https://davidrai.pages.dev/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border border-brand-border rounded bg-brand-bg text-xs group-hover:bg-white group-hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                        Visit Website
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-surface border border-brand-border rounded-lg p-6 group hover:border-white/30 transition-colors flex flex-col justify-between items-start min-h-[160px]">
+                    <div>
+                        <h3 class="font-mono text-sm font-semibold mb-1 text-white truncate w-full">biramarsingh</h3>
+                        <p class="text-xs text-brand-textmuted line-clamp-2">Example project / reference</p>
+                    </div>
+                    <a href="https://biramarsingh.netlify.app/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border border-brand-border rounded bg-brand-bg text-xs group-hover:bg-white group-hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                        Visit Website
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshop Routine -->
+        <section id="routine" class="py-20 border-t border-brand-border">
+            <h2 class="text-3xl font-semibold mb-8">Workshop Routine</h2>
+            <div class="w-full overflow-x-auto pb-4 hide-scrollbar">
+                <div class="min-w-[600px] sm:min-w-full">
+                    <img src="./syllabus.jpeg" alt="Workshop Syllabus Routine" class="w-full h-auto object-cover rounded-xl border border-brand-border/60 shadow-lg" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Project Section -->
+        <section id="project" class="py-24 border-y border-brand-border mb-20 bg-brand-surface relative overflow-hidden flex flex-col items-center justify-center text-center -mx-6 px-6 sm:mx-0 sm:rounded-2xl">
+            <!-- decorative blur -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
+            
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight relative z-10"><span class="text-xl inline-block mr-2">🚀</span> Final Project</h2>
+            <p class="text-brand-textmuted max-w-lg mx-auto mb-12 text-sm md:text-base relative z-10">Put everything you learned together and build your own personal portfolio website.</p>
+            
+            <div class="max-w-md w-full bg-brand-bg rounded-xl p-8 border border-brand-border text-left relative z-10 mx-auto shadow-glow">
+                <h3 class="font-mono text-sm tracking-widest uppercase mb-6 text-brand-textmuted text-center">Project Checklist</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brand-border flex items-center justify-center shrink-0 bg-brand-surface"></div>
+                        <span class="text-sm">Build a personal portfolio</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brand-border flex items-center justify-center shrink-0 bg-brand-surface"></div>
+                        <span class="text-sm">Make it responsive</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brand-border flex items-center justify-center shrink-0 bg-brand-surface"></div>
+                        <span class="text-sm">Add one or two JavaScript interactions</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brand-border flex items-center justify-center shrink-0 bg-brand-surface"></div>
+                        <span class="text-sm">Upload to GitHub</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brand-border flex items-center justify-center shrink-0 bg-brand-surface"></div>
+                        <span class="text-sm">Deploy the website</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brand-border flex items-center justify-center shrink-0 bg-brand-surface"></div>
+                        <span class="text-sm">Share your live website</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Learning Journey Summary -->
+        <section id="final-journey" class="py-12 flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs font-mono font-medium text-brand-textmuted">
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">LEARN</span>
+            <span class="hidden md:inline text-brand-border">→</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border text-white">BUILD</span>
+            <span class="hidden md:inline text-brand-border">→</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">STYLE</span>
+            <span class="hidden md:inline text-brand-border">→</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border text-white">INTERACT</span>
+            <span class="hidden md:inline text-brand-border">→</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">DEPLOY</span>
+            <span class="hidden md:inline text-brand-border">→</span>
+            <span class="px-3 py-1 bg-white text-black rounded border border-white">SHARE</span>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-border bg-brand-bg py-10 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center justify-center text-center">
+            <p class="text-lg font-bold tracking-tight mb-2">2 Days Web Development Workshop</p>
+            <p class="text-sm text-brand-textmuted mb-6">Learn. Build. Deploy.</p>
+            <p class="text-xs text-brand-textmuted/60">© 2026 Web Development Workshop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
