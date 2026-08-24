@@ -1,0 +1,22 @@
+#hello{
+    font-size:larger;
+    text-align: center;
+    color: aliceblue;
+}
+img{
+    width: 300px;
+    height: 300px;
+}
+body{
+    background-color: black;
+    height:100%;
+    width: 100%;
+    
+}   
+p{
+    color: aliceblue;
+}
+#ies{
+    text-align: left;
+    
+}

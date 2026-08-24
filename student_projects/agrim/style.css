@@ -1,0 +1,25 @@
+#ml{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    background-color: orange;
+    color: aqua;
+}
+
+#dd{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+    background-color: black;
+    color: aliceblue;
+}
+#gg{
+    background-color: chocolate;
+    color:aqua ;
+    text-align: left;   
+}
+.class{
+     font-size: 30px;
+    font-weight: 500;
+     text-align: center;   
+}

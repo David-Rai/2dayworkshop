@@ -1,0 +1,34 @@
+p{
+    font-size: 70;
+    color: white;
+}
+
+body,html{
+   background-color: black;
+   height: 100%;
+   width: 100%;
+}
+    h1{
+        color:red;
+    }
+    h3 {
+        color: white;
+    }
+    ol{
+        color: white;
+    }
+    h4{
+        color: white;
+    }
+    a{
+        color: yellow;
+        font-size: 50;
+    }
+    h1{
+        text-align: center;
+    }
+    input{
+        font-size: 5;
+    }
+    
+      

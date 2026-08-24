@@ -1,0 +1,22 @@
+h1{
+    color: blue;
+    background-color: rgb(red, green, blue);
+    font-size: 30%;
+    font-weight: 200;
+}
+p{
+    color: blueviolet;
+    background-color: darkblue;
+}
+div{
+    color: azure;font-size: 100px;
+}
+h2{
+    color: cyan;
+    background-color: chocolate;
+}
+p{
+    color: darkorchid;
+    background-color: cyan;
+    font-width: calc();
+}

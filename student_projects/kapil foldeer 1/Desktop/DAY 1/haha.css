@@ -1,0 +1,23 @@
+h1{
+    color: blue;
+    background-color:red ;
+}
+
+p {     
+    color: blue;
+    font-size: 50px;
+}
+#head1{
+    color: blue;
+    background-color: blueviolet;
+}
+body1{
+    color: black;
+    background-color: aqua;
+    text-align: right;
+    font-weight: 200;
+    width: 30%;
+}
+div{
+    width: 40%;
+}

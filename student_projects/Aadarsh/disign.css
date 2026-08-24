@@ -1,0 +1,22 @@
+body{
+    height: 100vh;
+    width: 100%;
+    background-color:rgb(106, 206, 13);
+}
+head{
+    background-color: beige;
+}
+
+div{
+font: size 30px;
+    text-align: center;
+   font-style: italic;
+}
+h1{
+    height: 50px;
+}
+h3
+{
+    font-style: italic;
+  
+}

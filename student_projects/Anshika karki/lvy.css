@@ -1,0 +1,16 @@
+h1 {
+    color:aqua;
+    background-color: azure;
+    height: 50;
+    width: 50;
+    text-align:center;
+}
+p{
+    color: beige;
+
+}
+img{
+    height: 50px;
+    width: 100px;
+
+}

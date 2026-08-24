@@ -1,0 +1,24 @@
+button{
+    color: blue;
+    background: #c70f0f;
+}
+h1{
+    column-rule-color: #c70f0f;
+}
+#mm{
+    color: aqua;
+}
+#bg{
+    height:100vh;
+    width:100% ;
+    background-image:url(file:///D:/scg%20day%201/148a8063-4c7a-4a9b-8f2d-9d49e9a6e615.png) ;
+background-repeat: repeat ;
+background-size: cover;
+}
+p{
+    color: #c70f0f;
+    background-color: rgb(228, 231, 233);
+}
+*{
+    background: red;
+}
