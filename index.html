@@ -628,11 +628,25 @@
 
         <!-- Student Projects Section -->
         <section id="student-projects" class="py-20 border-t border-brand-border w-full">
-            <h2 class="text-3xl font-semibold mb-4">Student Projects</h2>
-            <p class="text-brand-textmuted mb-12">Amazing projects built by students during the 2 Days Web Development
-                Workshop.</p>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl font-semibold mb-4">Student Projects</h2>
+                    <p class="text-brand-textmuted">Amazing projects built by students during the 2 Days Web Development
+                        Workshop.</p>
+                </div>
+                <!-- Search Component -->
+                <div class="relative w-full md:w-72 shrink-0">
+                    <input type="text" id="project-search" placeholder="Search your projects..."
+                        class="w-full bg-brand-surface border border-brand-border text-brand-text text-sm rounded-lg py-2.5 pl-10 pr-4 focus:outline-none focus:border-white/40 transition-colors placeholder:text-brand-textmuted">
+                    <svg class="w-4 h-4 text-brand-textmuted absolute left-3.5 top-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+            </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
 
                 <!-- Project: Aadarsh -->
                 <div

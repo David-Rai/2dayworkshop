@@ -65,4 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Project Search functionality
+    const projectSearch = document.getElementById('project-search');
+    const projectsGrid = document.getElementById('projects-grid');
+    
+    if (projectSearch && projectsGrid) {
+        const projectCards = projectsGrid.querySelectorAll('.group');
+        
+        projectSearch.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            projectCards.forEach(card => {
+                const titleElement = card.querySelector('h3');
+                if (titleElement) {
+                    const title = titleElement.textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        card.style.display = 'flex'; // maintain the 'flex' display used for cards
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        });
+    }
 });
